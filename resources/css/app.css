@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .title {
+        @apply text-gray-700 font-semibold tracking-wider text-xl md:text-2xl lg:text-3xl  mb-2 lg:mb-4;
+    }
+
+    trix-editor ul li {
+        @apply list-item list-inside list-disc;
+    }
+
+    trix-editor ol li {
+        @apply list-item list-inside list-decimal;
+    }
+
+    #table_wrapper {
+        @apply w-full p-2;
+    }
+    #table_wrapper #table_length label {
+        @apply w-fit text-left;
+    }
+    #table_wrapper #table_length select {
+        @apply w-full px-2 py-0.5 text-left cursor-pointer outline-none focus:border-none focus:outline-primary-700;
+    }
+
+    #table_wrapper #table_filter input {
+        @apply w-full px-2 py-0.5 text-left;
+    }
+
+    #table_length {
+        @apply text-left w-fit;
+    }
+    #table_filter {
+        @apply text-left w-fit;
+    }
+
+    #table_filter {
+        @apply mb-4;
+    }
+
+    .form-group {
+        @apply grid grid-cols-1 lg:grid-cols-2 gap-5;
+    }
+    .input-group {
+        @apply w-full mb-4;
+    }
+
+    .input {
+        @apply shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2;
+    }
+
+    .is-invalid {
+        @apply border-red-300 focus:ring-red-500 focus:border-red-500 text-red-500;
+    }
+}
