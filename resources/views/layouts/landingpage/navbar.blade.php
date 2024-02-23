@@ -24,7 +24,7 @@
         <a href="{{ url('/') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ asset('asset/image/logo-rsud-baubau.png') }}" class="h-10" alt="BLUD RSUD KOTA BAUBAU" />
             <h1 class="self-center text-sm font-bold md:text-base xl:text-2xl whitespace-nowrap text-primary-700">
-                <span class="text-secondary-500">BLUD</span> RSUD KOTA BAUBAU
+                <span class="text-secondary-500">RSUD </span> KOTA BAUBAU
             </h1>
         </a>
         <button data-collapse-toggle="mega-menu-full" type="button"
@@ -114,7 +114,7 @@
                                 </a>
                             </li>
                             <li class="relative">
-                                <a class="block px-4 py-2 hover:bg-gray-100 disabled">
+                                <a class="block px-4 py-2 disabled text-gray-500">
                                     Booking
                                 </a>
                                 <span

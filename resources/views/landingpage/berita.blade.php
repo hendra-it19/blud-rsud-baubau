@@ -47,7 +47,7 @@
     </section>
 
 
-    <section class="min-h-screen p-2 lg:px-10 lg:pb-10">
+    <section class="p-2 lg:px-10 lg:pb-10">
         <h2 class="mb-2 text-xl font-semibold tracking-wider text-gray-600 mg:text-2xl lg:text-3xl lg:mb-8">
             Berita Terbaru
         </h2>

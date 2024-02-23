@@ -84,16 +84,16 @@
                             No
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Nama pegawai
+                            Nama Dokter
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Jabatan
+                            Hari Kerja
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Profil
+                            Jam Mulai
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Foto
+                            Jam Selesai
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Aksi
@@ -109,17 +109,16 @@
                                 {{ $no++ }}
                             </th>
                             <td class="px-6 py-4">
-                                {{ $row->nama }}
+                                {{ $row->dokter->nm_dokter }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $row->jabatan }}
+                                {{ $row->hari_kerja }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $row->profil }}
+                                {{ $row->jam_mulai }}
                             </td>
-                            <td class="px-1 py-1">
-                                <img src="{{ asset($row->foto) }}" alt="Foto Pegawai"
-                                    class="object-cover w-16 h-16 bg-cover rounded-md">
+                            <td class="px-6 py-4">
+                                {{ $row->jam_selesai }}
                             </td>
                             <td class="px-6 py-4">
                                 <a href="{{ route('jadwal-dokter.edit', $row->kd_dokter) }}"

@@ -5,7 +5,7 @@
 
         <div class="flex justify-between gap-5 mb-7 lg:mb-12">
             <div class="flex flex-col gap-4">
-                <h5 class="text-2xl font-semibold capitalize">Update Data Struktural</h5>
+                <h5 class="text-2xl font-semibold capitalize">Update E-Berkas</h5>
                 <nav class="flex" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                         <li class="inline-flex items-center">
@@ -22,14 +22,14 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('strukturals.index') }}" class="flex items-center">
+                            <a href="{{ route('anjab.index') }}" class="flex items-center">
                                 <svg class="w-3 h-3 mx-1 text-gray-700 hover:text-primary-600 rtl:rotate-180"
                                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="2" d="m1 9 4-4-4-4" />
                                 </svg>
                                 <span
-                                    class="text-sm font-medium text-gray-700 hover:text-primary-700 ms-1 md:ms-2">Struktural</span>
+                                    class="text-sm font-medium text-gray-700 hover:text-primary-700 ms-1 md:ms-2">E-Berkas</span>
                             </a>
                         </li>
                         <li aria-current="page">
@@ -39,7 +39,8 @@
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="2" d="m1 9 4-4-4-4" />
                                 </svg>
-                                <span class="text-sm font-medium text-gray-500 ms-1 md:ms-2 dark:text-gray-400">Ubah</span>
+                                <span
+                                    class="text-sm font-medium text-gray-500 ms-1 md:ms-2 dark:text-gray-400">Update</span>
                             </div>
                         </li>
                     </ol>
@@ -50,73 +51,54 @@
 
 
         <div class="relative">
-            <form action="{{ route('strukturals.update', $struktural->id) }}"
-                class="p-1 rounded shadow sm:rounded-lg md:p-4" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('anjab.update', $anjabAbk->id) }}" class="p-1 rounded shadow sm:rounded-lg md:p-4"
+                method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('put')
-
-                <div class="mb-3 border-4 rounded-md w-36 h-36">
-                    <img src="{{ asset($struktural->foto) }}" alt="" id="preview-selected-image"
-                        class="object-cover w-full h-full bg-cover">
-                </div>
+                @method('PUT')
                 <div class="form-group">
+
                     <div class="input-group">
-                        <label for="foto" class="block mb-2 text-sm font-medium text-gray-900">
-                            Input Foto
+                        <label for="nama_berkas" class="block mb-2 text-sm font-medium text-gray-900">
+                            Nama Berkas
                         </label>
-                        <input type="file" name="foto" id="foto" accept="image/*" onchange="previewImage(event)"
-                            class="w-full border rounded-md cursor-pointer @error('foto')
+                        <input type="text" id="nama_berkas" name="nama_berkas"
+                            class="input @error('nama_berkas')
+                                is-invalid
+                            @enderror"
+                            placeholder="nama berkas" required value="{{ old('nama_berkas', $anjabAbk->nama_berkas) }}">
+                        @error('nama_berkas')
+                            <small class="text-red-500">
+                                {{ $message }}
+                            </small>
+                        @enderror
+                    </div>
+
+                    <div class="input-group">
+                        <label for="jenis_berkas" class="block mb-2 text-sm font-medium text-gray-900">
+                            Jenis Berkas
+                        </label>
+                        <input type="text" id="jenis_berkas" name="jenis_berkas"
+                            class="input @error('jenis_berkas')
+                                is-invalid
+                            @enderror"
+                            placeholder="jenis berkas" required value="{{ old('jenis_berkas', $anjabAbk->jenis_berkas) }}">
+                        @error('jenis_berkas')
+                            <small class="text-red-500">
+                                {{ $message }}
+                            </small>
+                        @enderror
+                    </div>
+
+                    <div class="input-group">
+                        <label for="file" class="block mb-2 text-sm font-medium text-gray-900">
+                            File
+                            <small class="ml-2 text-gray-500"> Note : Kosongkan file jika tidak ingin mengganti</small>
+                        </label>
+                        <input type="file" name="file" id="file" accept="application/pdf"
+                            class="w-full border rounded-md cursor-pointer @error('file')
                                 is-invalid
                             @enderror">
-                        @error('foto')
-                            <small class="text-red-500">
-                                {{ $message }}
-                            </small>
-                        @enderror
-                    </div>
-
-                    <div class="input-group">
-                        <label for="nama_lengkap" class="block mb-2 text-sm font-medium text-gray-900">
-                            Nama Lengkap
-                        </label>
-                        <input type="text" id="nama_lengkap" name="nama_lengkap"
-                            class="input @error('nama_lengkap')
-                                is-invalid
-                            @enderror"
-                            placeholder="nama lengkap" required value="{{ old('nama_lengkap', $struktural->nama) }}">
-                        @error('nama_lengkap')
-                            <small class="text-red-500">
-                                {{ $message }}
-                            </small>
-                        @enderror
-                    </div>
-
-                    <div class="input-group">
-                        <label for="jabatan" class="block mb-2 text-sm font-medium text-gray-900">
-                            Jabatan
-                        </label>
-                        <input type="text" id="jabatan" name="jabatan"
-                            class="input @error('jabatan')
-                                is-invalid
-                            @enderror"
-                            placeholder="jabatan" required value="{{ old('jabatan', $struktural->jabatan) }}">
-                        @error('jabatan')
-                            <small class="text-red-500">
-                                {{ $message }}
-                            </small>
-                        @enderror
-                    </div>
-
-                    <div class="input-group">
-                        <label for="profil" class="block mb-2 text-sm font-medium text-gray-900">
-                            Profil Singkat
-                        </label>
-                        <textarea type="text" id="profil" name="profil" rows="7"
-                            class="input h-auto @error('profil')
-                                is-invalid
-                            @enderror"
-                            placeholder="Profil Singkat">{{ old('profil', $struktural->profil) }}</textarea>
-                        @error('profil')
+                        @error('file')
                             <small class="text-red-500">
                                 {{ $message }}
                             </small>
@@ -125,13 +107,13 @@
                 </div>
 
                 <div class="mt-10">
-                    <a href="{{ route('strukturals.index') }}"
+                    <a href="{{ route('anjab.index') }}"
                         class="px-5 py-2 mb-2 text-sm font-medium text-white bg-gray-700 rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 me-2 focus:outline-none">
                         Kembali
                     </a>
                     <button type="submit"
                         class="px-5 py-2 mb-2 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 me-2 focus:outline-none">
-                        Perbarui Data
+                        Update Data E-Berkas
                     </button>
 
                 </div>
@@ -140,39 +122,3 @@
 
     </div>
 @endsection
-
-@push('scripts')
-    <script>
-        const previewImage = (event) => {
-            /**
-             * Get the selected files.
-             */
-            const imageFiles = event.target.files;
-            /**
-             * Count the number of files selected.
-             */
-            const imageFilesLength = imageFiles.length;
-            /**
-             * If at least one image is selected, then proceed to display the preview.
-             */
-            if (imageFilesLength > 0) {
-                /**
-                 * Get the image path.
-                 */
-                const imageSrc = URL.createObjectURL(imageFiles[0]);
-                /**
-                 * Select the image preview element.
-                 */
-                const imagePreviewElement = document.querySelector("#preview-selected-image");
-                /**
-                 * Assign the path to the image preview element.
-                 */
-                imagePreviewElement.src = imageSrc;
-                /**
-                 * Show the element by changing the display value to "block".
-                 */
-                imagePreviewElement.style.display = "block";
-            }
-        };
-    </script>
-@endpush

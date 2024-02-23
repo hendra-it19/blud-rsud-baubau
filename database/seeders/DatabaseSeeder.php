@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('super123'),
             'is_superadmin' => true,
         ]);
+        User::create([
+            'nama' => 'Admin Gones',
+            'username' => 'admin',
+            'password' => Hash::make('admin123'),
+            'is_superadmin' => false,
+        ]);
     }
 }

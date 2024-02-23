@@ -5,7 +5,7 @@
 
         <div class="flex justify-between gap-5 mb-7 lg:mb-12">
             <div class="flex flex-col gap-4">
-                <h5 class="text-2xl font-semibold capitalize">Daftar E-Berkar</h5>
+                <h5 class="text-2xl font-semibold capitalize">Daftar E-Berkas</h5>
                 <nav class="flex" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                         <li class="inline-flex items-center">

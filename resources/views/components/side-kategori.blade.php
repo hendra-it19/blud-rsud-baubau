@@ -1,4 +1,4 @@
-<div>
+<div class="mt-14 md:mt-0">
     <div class="shadow-sm">
         <div class="relative h-48 overflow-hidden rounded">
             <img src="{{ asset('asset/image/unggulan/mobil-donor-darah.jpg') }}" alt="" class="w-full object-cove">

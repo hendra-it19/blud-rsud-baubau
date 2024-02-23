@@ -14,6 +14,8 @@ class SikJadwalDokter extends Model
 
     protected $table = 'jadwal';
 
+    // protected $with = ['dokter', 'poliklinik'];
+
     protected $fillable = [
         'kd_dokter',
         'hari_kerja',
@@ -26,5 +28,10 @@ class SikJadwalDokter extends Model
     public function dokter(): BelongsTo
     {
         return $this->belongsTo(SikDokter::class, 'kd_dokter', 'kd_dokter');
+    }
+
+    public function poliklinik(): BelongsTo
+    {
+        return $this->belongsTo(SikPoliklinik::class, 'kd_poli', 'kd_poli');
     }
 }

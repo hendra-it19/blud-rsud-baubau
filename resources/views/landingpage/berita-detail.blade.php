@@ -60,7 +60,7 @@
         </div>
     </section>
 
-    <section class="min-h-screen p-2 lg:px-10">
+    <section class="p-2 lg:px-10">
         <h2 class="mb-2 text-xl font-semibold tracking-wider text-gray-600 mg:text-2xl lg:text-3xl lg:mb-8">
             {{ $berita->judul }}
         </h2>
@@ -72,10 +72,8 @@
                             class="object-cover w-full h-full bg-cover">
                     </div>
                     <div class="mt-3 mb-8 text-lg font-semibold text-gray-800 capitalize">
-
-
-                        <div class="inline-flex" role="group">
-                            <a type="button" class="inline-flex items-center px-0 py-2 text-sm font-medium text-gray-600">
+                        <div class="flex flex-wrap gap-3" role="group">
+                            <a type="button" class="inline-flex items-center px-0 py-0 text-sm font-medium text-gray-600">
                                 <svg class="w-4 h-4 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd"
@@ -84,7 +82,7 @@
                                 </svg>
                                 {{ $berita->user->nama }}
                             </a>
-                            <a type="button" class="inline-flex items-center px-2 py-2 text-sm font-medium text-gray-600">
+                            <a type="button" class="inline-flex items-center px-0 py-0 text-sm font-medium text-gray-600">
                                 <svg class="w-4 h-4 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd"
@@ -93,7 +91,7 @@
                                 </svg>
                                 {{ $berita->category->nama_kategori }}
                             </a>
-                            <a type="button" class="inline-flex items-center px-2 py-2 text-sm font-medium text-gray-600">
+                            <a type="button" class="inline-flex items-center px-0 py-0 text-sm font-medium text-gray-600">
                                 <svg class="w-4 h-4 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd"
@@ -102,7 +100,7 @@
                                 </svg>
                                 {{ $carbon::parse($berita->created_at)->diffForHumans() }}
                             </a>
-                            <a type="button" class="inline-flex items-center px-2 py-2 text-sm font-medium text-gray-600">
+                            <a type="button" class="inline-flex items-center px-0 py-0 text-sm font-medium text-gray-600">
                                 <svg class="w-4 h-4 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd"
@@ -113,7 +111,7 @@
                                     Jumlah Komentar
                                 </span>
                             </a>
-                            <a type="button" class="inline-flex items-center px-2 py-2 text-sm font-medium text-gray-600">
+                            <a type="button" class="inline-flex items-center px-0 py-0 text-sm font-medium text-gray-600">
                                 <svg class="w-4 h-4 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-width="2"
@@ -137,7 +135,7 @@
         </div>
     </section>
 
-    <div id="disqus_thread" class="m-4 lg:mx-10 border-t-[8px] pt-5 h-fit mb-10 pb-10"></div>
+    <div id="disqus_thread" class="m-5 lg:mx-10 pt-10 h-fit mb-10 pb-10 block"></div>
 
 
     <x-mitra-section></x-mitra-section>

@@ -63,17 +63,41 @@ class AnjabController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AnjabAbk $anjabAbk)
+    public function edit($anjabAbk)
     {
-        //
+        $judulHalaman = $this->judulHalaman;
+        $anjabAbk = AnjabAbk::find($anjabAbk);
+        return view('adminpage.e-berkas.update', compact('judulHalaman', 'anjabAbk'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AnjabAbk $anjabAbk)
+    public function update(Request $request, $anjabAbk)
     {
-        //
+        $anjabAbk = AnjabAbk::find($anjabAbk);
+        $request->validate([
+            'nama_berkas' => ['required'],
+            'jenis_berkas' => ['required'],
+            'file' => ['nullable', 'mimes:pdf']
+        ]);
+        if (isset($request->file)) {
+            $file = $request->file('file');
+            $name = date('dmy-His') . '-' . $request->nama_berkas . '.' . $file->getClientOriginalExtension();
+            $path = 'upload/e-berkas/';
+            unlink($anjabAbk->file);
+            $file->move($path, $name);
+            $fileBaru = $path . $name;
+        } else {
+            $fileBaru = $anjabAbk->file;
+        }
+        $anjabAbk->update([
+            'nama_berkas' => ucwords($request->nama_berkas),
+            'jenis_berkas' => ucwords($request->jenis_berkas),
+            'file' => $fileBaru,
+        ]);
+        return redirect()->route('anjab.index')
+            ->with('success', 'Data E-Berkas ' . $anjabAbk->nama_berkas . ' diubah!');
     }
 
     /**

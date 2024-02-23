@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SikDokter extends Model
@@ -13,6 +14,8 @@ class SikDokter extends Model
     protected $connection = 'mysql_sik';
 
     protected $table = 'dokter';
+
+    // protected $with = ['spesialis'];
 
     protected $fillable = [
         'kd_dokter',
@@ -32,8 +35,13 @@ class SikDokter extends Model
         'foto',
     ];
 
-    public function jadwals(): HasMany
+    public function jadwal(): HasMany
     {
         return $this->hasMany(SikJadwalDokter::class, 'kd_dokter', 'kd_dokter');
+    }
+
+    public function spesialis(): BelongsTo
+    {
+        return $this->belongsTo(SikSpesialis::class, 'kd_sps', 'kd_sps');
     }
 }
