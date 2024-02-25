@@ -16,16 +16,20 @@
             <hr class="h-1 rounded-full bg-gray-700 w-[60%]">
         </div>
         <div class="flex flex-col gap-3 p-4">
-            @foreach ($beritaTerbaru as $row)
-                <a href="{{ url('/berita', $row->slug) }}" class="flex gap-4 group">
-                    <img src="{{ asset($row->foto) }}" alt=""
-                        class="object-cover object-center rounded shadow-sm h-14 w-14 group-hover:shadow">
-                    <div>
-                        <p class="group-hover:underline group-hover:text-primary-700">{{ $row->judul }}</p>
-                        <p class="text-sm line-clamp-1">{{ $row->excerpt }}</p>
-                    </div>
-                </a>
-            @endforeach
+            @if (count($beritaTerbaru) > 0)
+                @foreach ($beritaTerbaru as $row)
+                    <a href="{{ url('/berita', $row->slug) }}" class="flex gap-4 group">
+                        <img src="{{ asset($row->foto) }}" alt=""
+                            class="object-cover object-center rounded shadow-sm h-14 w-14 group-hover:shadow">
+                        <div>
+                            <p class="group-hover:underline group-hover:text-primary-700">{{ $row->judul }}</p>
+                            <p class="text-sm line-clamp-1">{{ $row->excerpt }}</p>
+                        </div>
+                    </a>
+                @endforeach
+            @else
+                <p class="font-semibold text-gray-500">Berita Masih Kosong!</p>
+            @endif
         </div>
     </div>
 </div>

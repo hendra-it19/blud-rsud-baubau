@@ -51,51 +51,54 @@
         <div class="flex flex-col gap-6 md:flex-row">
             <div class="flex flex-col gap-4 lg:gap-6 w-full md:w-[55%] lg:w-[65%]">
                 <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-3">
-                    <div
-                        class="flex flex-row items-center justify-start gap-4 p-3 rounded shadow lg:flex-col lg:justify-center lg:text-center">
+                    <div data-aos="zoom-in"
+                        class="flex flex-col items-center justify-start gap-1 lg:gap-3 text-center p-3 rounded shadow lg:flex-col lg:justify-center lg:text-center border-t-4 border-yellow-400">
                         <svg class="w-5 h-5 lg:w-6 lg:h-6 text-primary-800 dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd"
                                 d="M12 2a8 8 0 0 1 6.6 12.6l-.1.1-.6.7-5.1 6.2a1 1 0 0 1-1.6 0L6 15.3l-.3-.4-.2-.2v-.2A8 8 0 0 1 11.8 2Zm3 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                                 clip-rule="evenodd" />
                         </svg>
-                        <span class="text-wrap">Baadia, Kec. Murhum, Kota Bau-bau</span>
+                        <h5 class="font-semibold text-lg text-primary-700">Alamat</h5>
+                        <span class="text-wrap text-gray-600">Baadia, Kec. Murhum, Kota Bau-bau</span>
                     </div>
-                    <div
-                        class="flex flex-row items-center justify-start gap-4 p-3 rounded shadow lg:flex-col lg:justify-center lg:text-center">
+                    <div data-aos="zoom-in"
+                        class="flex flex-col items-center justify-start gap-1 lg:gap-3 text-center p-3 rounded shadow lg:flex-col lg:justify-center lg:text-center border-t-4 border-yellow-400">
                         <svg class="w-5 h-5 lg:w-6 lg:h-6 text-primary-800 dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M8 4a2.6 2.6 0 0 0-2 .9 6.2 6.2 0 0 0-1.8 6 12 12 0 0 0 3.4 5.5 12 12 0 0 0 5.6 3.4 6.2 6.2 0 0 0 6.6-2.7 2.6 2.6 0 0 0-.7-3L18 12.9a2.7 2.7 0 0 0-3.8 0l-.6.6a.8.8 0 0 1-1.1 0l-1.9-1.8a.8.8 0 0 1 0-1.2l.6-.6a2.7 2.7 0 0 0 0-3.8L10 4.9A2.6 2.6 0 0 0 8 4Z" />
                         </svg>
-                        <span class="text-wrap">0822-9259-5705</span>
+                        <h5 class="font-semibold text-lg text-primary-700">Telpon Kami</h5>
+                        <span class="text-wrap text-gray-600">0822-9259-5705</span>
                     </div>
 
-                    <div
-                        class="flex flex-row items-center justify-start gap-4 p-3 rounded shadow lg:flex-col lg:justify-center lg:text-center">
+                    <div data-aos="zoom-in"
+                        class="flex flex-col items-center justify-start gap-1 lg:gap-3 text-center p-3 rounded shadow lg:flex-col lg:justify-center lg:text-center border-t-4 border-yellow-400">
                         <svg class="w-5 h-5 lg:w-6 lg:h-6 text-primary-800 dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M17 6h-2V5h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2h-.5a6 6 0 0 1 1.5 4v4a1 1 0 1 1-2 0v-4a4 4 0 0 0-4-4h-.5C5 6 3 8 3 10.5V16c0 .6.4 1 1 1h7v3c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-3h5c.6 0 1-.4 1-1v-6a4 4 0 0 0-4-4Zm-9 8.5H7a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2Z" />
                         </svg>
-                        <span class="text-wrap">rsud@baubaukota.go.id</span>
+                        <h5 class="font-semibold text-lg text-primary-700">Email Kami</h5>
+                        <span class="text-wrap text-gray-600">rsud@baubaukota.go.id</span>
                     </div>
 
-                    <div
-                        class="flex flex-row items-center justify-start gap-4 p-3 rounded shadow lg:flex-col lg:justify-center lg:text-center">
+                    <div data-aos="zoom-in"
+                        class="flex flex-col items-center justify-start gap-1 lg:gap-3 text-center p-3 rounded shadow lg:flex-col lg:justify-center lg:text-center border-t-4 border-yellow-400">
                         <svg class="w-5 h-5 lg:w-6 lg:h-6 text-primary-800 dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd"
                                 d="M8.6 4.7A8 8 0 0 1 19 8h-.7c-.7 0-1.2.3-1.2 1 0 .2 0 2-2 2s-2-1.8-2-2c0-1.5-.8-1.7-1.7-2L10 6.6c-1-.5-1.3-1.2-1.5-1.9ZM6 4a10 10 0 0 0-2.8 3.3A10 10 0 0 0 12.5 22 10 10 0 1 0 6 4Zm13.4 11.1-.8-.1h-.2a3.4 3.4 0 0 0-3.4 3.4v1a8 8 0 0 0 4.4-4.3ZM12 20A8 8 0 0 1 5.1 8c1 .5 1.4 1.5 1.8 2.4l.7 1.1c.5.7 1 1 1.6 1.4.5.3 1 .6 1.6 1.3 1.4 1.8 1.4 4.3 1.3 5.8Z"
                                 clip-rule="evenodd" />
                         </svg>
-                        <span class="text-wrap">rsud-baubau.go.id</span>
+                        <h5 class="font-semibold text-lg text-primary-700">Website Kami</h5>
+                        <span class="text-wrap text-gray-600">rsud-baubau.go.id</span>
                     </div>
                 </div>
                 <div class="mt-10">
                     <h2 class="mb-3 text-xl font-semibold tracking-wider text-gray-600 lg:mb-10 mg:text-2xl lg:text-3xl">
                         Form Pengaduan Pengguna</h2>
-
                     <form action="" method="post" class="flex flex-col w-full max-w-lg gap-2">
                         <div class="relative z-0 w-full mb-5 group">
                             <input type="text" name="nama" id="nama"

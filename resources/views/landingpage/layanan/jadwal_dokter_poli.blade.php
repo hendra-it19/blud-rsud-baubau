@@ -32,8 +32,22 @@
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="m1 9 4-4-4-4" />
                                     </svg>
-                                    <a class="text-xs font-medium text-gray-200 ms-1 lg:text-sm md:ms-2">
+                                    <a href="{{ url('/jadwal-dokter') }}"
+                                        class="text-xs font-medium text-gray-200 ms-1 lg:text-sm md:ms-2">
                                         Jadwal Dokter
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex items-center">
+                                    <svg class="rtl:rotate-180 w-2 h-2 lg:w-4 lg:h-4 text-gray-400 mx-0.5 lg:mx-1"
+                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 6 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <a class="text-xs font-medium text-gray-200 ms-1 lg:text-sm md:ms-2">
+                                        {{ $poli->nm_poli }}
                                     </a>
                                 </div>
                             </li>
@@ -48,8 +62,8 @@
 
 
     <section class="p-2 lg:px-10 lg:pb-10">
-        <h2 class="mb-2 text-xl font-semibold tracking-wider text-gray-600 mg:text-2xl lg:text-3xl lg:mb-8">
-            Jadwal Dokter
+        <h2 class="mb-2 text-xl font-semibold tracking-wider text-gray-600 mg:text-2xl lg:text-3xl lg:mb-8 capitalize">
+            Jadwal Dokter Pada Poli {{ $poli->nm_poli }}
         </h2>
         <div class="flex flex-col gap-6 md:flex-row">
             <div class="w-full md:w-[55%] lg:w-[65%]">
@@ -60,16 +74,16 @@
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" class="px-4 py-2">
-                                        Kode Poli
+                                        Nama Dokter
                                     </th>
                                     <th scope="col" class="px-4 py-2">
-                                        Nama Poli
+                                        Hari Kerja
                                     </th>
                                     <th scope="col" class="px-4 py-2">
-                                        Status
+                                        Jam Mulai
                                     </th>
                                     <th scope="col" class="px-4 py-2">
-                                        Lihat Jadwal
+                                        Jam Selesai
                                     </th>
                                 </tr>
                             </thead>
@@ -78,25 +92,16 @@
                                     <tr
                                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600  text-xs lg:text-base">
                                         <th scope="row" class="px-3 py-2 text-gray-900 dark:text-white">
-                                            {{ $row->kd_poli }}
+                                            {{ $row->dokter->nm_dokter }}
                                         </th>
                                         <td class="px-3 py-2">
-                                            {{ $row->nm_poli }}
+                                            {{ $row->hari_kerja }}
                                         </td>
                                         <td class="px-3 py-2">
-                                            {{ $row->status ? 'Tersedia' : 'Tidak Tersedia' }}
+                                            {{ $row->jam_mulai }}
                                         </td>
-                                        <td class="px-3 py-2 flex">
-                                            <a href="{{ url('/jadwal-dokter', $row->kd_poli) }}"
-                                                class="py-1 px-4 rounded text-primary-700"><svg class="w-6 h-6"
-                                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke="currentColor" stroke-width="2"
-                                                        d="M21 12c0 1.2-4 6-9 6s-9-4.8-9-6c0-1.2 4-6 9-6s9 4.8 9 6Z" />
-                                                    <path stroke="currentColor" stroke-width="2"
-                                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                                </svg>
-                                            </a>
+                                        <td class="px-3 py-2">
+                                            {{ $row->jam_selesai }}
                                         </td>
                                     </tr>
                                 @endforeach

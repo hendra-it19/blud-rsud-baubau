@@ -19,8 +19,8 @@
         </div>
     </div>
 </nav>
-<nav class="sticky top-0 left-0 right-0 z-50 w-full text-sm bg-white shadow lg:text-base">
-    <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+<nav class="sticky top-0 left-0 right-0 z-50 w-full text-sm bg-white shadow lg:text-base" id="nav">
+    <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-6 mx-auto" id="navbar">
         <a href="{{ url('/') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ asset('asset/image/logo-rsud-baubau.png') }}" class="h-10" alt="BLUD RSUD KOTA BAUBAU" />
             <h1 class="self-center text-sm font-bold md:text-base xl:text-2xl whitespace-nowrap text-primary-700">

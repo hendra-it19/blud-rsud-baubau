@@ -67,8 +67,8 @@
     <section class="bg-gradient-to-b from-gray-300 to-white">
         <div class="flex flex-wrap justify-between w-full max-w-5xl gap-4 p-5 m-auto overflow-hidden md:p-10 lg:gap-3">
 
-            <div data-aos="fade-down" data-aos-delay="0" data-aos-once="true"
-                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden">
+            <a href="{{ url('/jadwal-dokter') }}" data-aos="fade-down" data-aos-delay="0" data-aos-once="true"
+                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden cursor-pointer">
                 <div
                     class="p-5 bg-white rounded shadow-md lg:shadow-none lg:rounded-none lg:p-4 lg:flex lg:justify-center lg:items-center lg:gap-3 w-fit h-fit">
                     <svg class="w-[30px] h-[30px] text-secondary-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -84,10 +84,10 @@
                     </svg>
                 </div>
                 <span class="block lg:hidden">Cari Dokter</span>
-            </div>
+            </a>
 
-            <div data-aos="fade-down" data-aos-delay="100" data-aos-once="true"
-                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden">
+            <a href="{{ url('/jadwal-dokter') }}" data-aos="fade-down" data-aos-delay="100" data-aos-once="true"
+                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden cursor-pointer">
                 <div
                     class="p-5 bg-white rounded shadow-md lg:shadow-none lg:rounded-none lg:p-4 lg:flex lg:justify-center lg:items-center lg:gap-3 w-fit h-fit">
                     <svg class="w-[30px] h-[30px] text-secondary-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -103,10 +103,10 @@
                     </svg>
                 </div>
                 <span class="block lg:hidden">Jadwal Dokter</span>
-            </div>
+            </a>
 
-            <div data-aos="fade-down" data-aos-delay="200" data-aos-once="true"
-                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden">
+            <a data-aos="fade-down" data-aos-delay="200" data-aos-once="true"
+                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden cursor-pointer">
                 <div
                     class="p-5 bg-white rounded shadow-md lg:shadow-none lg:rounded-none lg:p-4 lg:flex lg:justify-center lg:items-center lg:gap-3 w-fit h-fit">
                     <svg class="w-[30px] h-[30px] text-secondary-500" aria-hidden="true"
@@ -122,10 +122,10 @@
                     </svg>
                 </div>
                 <span class="block lg:hidden">Booking</span>
-            </div>
+            </a>
 
-            <div data-aos="fade-down" data-aos-delay="300" data-aos-once="true"
-                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden">
+            <a href="{{ url('/struktural') }}" data-aos="fade-down" data-aos-delay="300" data-aos-once="true"
+                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden cursor-pointer">
                 <div
                     class="p-5 bg-white rounded shadow-md lg:shadow-none lg:rounded-none lg:p-4 lg:flex lg:justify-center lg:items-center lg:gap-3 w-fit h-fit">
                     <svg class="w-[30px] h-[30px] text-secondary-500" aria-hidden="true"
@@ -141,10 +141,10 @@
                     </svg>
                 </div>
                 <span class="block lg:hidden">Struktural</span>
-            </div>
+            </a>
 
-            <div data-aos="fade-down" data-aos-delay="400" data-aos-once="true"
-                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden text-wrap">
+            <a href="#fasilitas" data-aos="fade-down" data-aos-delay="400" data-aos-once="true"
+                class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden cursor-pointer text-wrap scroll-smooth">
                 <div
                     class="p-5 bg-white rounded shadow-md lg:shadow-none lg:rounded-none lg:p-4 lg:flex lg:justify-center lg:items-center lg:gap-3 w-fit h-fit">
                     <svg class="w-[30px] h-[30px] text-secondary-500" aria-hidden="true"
@@ -160,7 +160,7 @@
                     </svg>
                 </div>
                 <span class="block lg:hidden">Fasilitas</span>
-            </div>
+            </a>
 
         </div>
     </section>
@@ -265,7 +265,8 @@
     </section>
 
 
-    <section class="grid grid-cols-1 gap-5 p-5 my-10 overflow-hidden lg:p-10 lg:grid-cols-2">
+    <section id="fasilitas"
+        class="grid grid-cols-1 gap-5 p-5 my-10 overflow-hidden lg:p-10 lg:grid-cols-2 scroll-mt-20 scroll-smooth">
         <div data-aos="fade-right">
             <h2 class="title">
                 Ketika Pengalaman Bertemu Kepedulian

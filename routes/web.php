@@ -37,6 +37,7 @@ Route::get('/struktural', [TentangKamiController::class, 'struktural']);
 
 Route::get('/informasi-layanan', [LayananController::class, 'informasiLayanan']);
 Route::get('/jadwal-dokter', [LayananController::class, 'jadwalDokter']);
+Route::get('/jadwal-dokter/{poli}', [LayananController::class, 'jadwalDokterPoli']);
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('loginPost');

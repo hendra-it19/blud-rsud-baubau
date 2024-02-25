@@ -1,0 +1,9 @@
+#navbar {
+    transition: 0.4s;
+}
+
+html,
+body,
+#fasilitas {
+    scroll-behavior: smooth;
+}

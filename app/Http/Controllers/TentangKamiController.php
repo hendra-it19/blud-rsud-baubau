@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SikJadwal;
+use App\Models\Struktural;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -23,6 +24,8 @@ class TentangKamiController extends Controller
     public function struktural(): View
     {
         $judulHalaman = 'Struktural';
-        return view('landingpage.tentang_kami.struktural', compact('judulHalaman'));
+        $direktur = Struktural::orderBy('id', 'ASC')->first();
+        $struktural = Struktural::orderBy('id', 'ASC')->get();
+        return view('landingpage.tentang_kami.struktural', compact('judulHalaman', 'direktur', 'struktural'));
     }
 }
