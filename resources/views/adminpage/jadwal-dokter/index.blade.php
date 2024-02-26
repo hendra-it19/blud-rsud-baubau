@@ -87,6 +87,9 @@
                             Nama Dokter
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Poliklinik
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Hari Kerja
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -110,6 +113,9 @@
                             </th>
                             <td class="px-6 py-4">
                                 {{ $row->dokter->nm_dokter }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $row->poliklinik->nm_poli }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ $row->hari_kerja }}

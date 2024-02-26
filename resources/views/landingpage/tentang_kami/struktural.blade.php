@@ -67,7 +67,7 @@
                 @endif
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between items-center gap-5">
                     @foreach ($struktural as $row)
-                        @if ($row->id != 1)
+                        @if ($row->id != $direktur->id)
                             <div
                                 class="w-full m-auto max-w-40 shadow hover:shadow-md rounded-lg p-3 hover:border-t-4 hover:border-yellow-400 duration-300 cursor-pointer">
                                 <div class="relative">

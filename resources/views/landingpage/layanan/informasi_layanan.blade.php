@@ -55,10 +55,9 @@
             <div class="w-full md:w-[55%] lg:w-[65%]">
                 <div>
                     <div id="accordion-collapse" data-accordion="collapse" class="mb-10">
-                        <p class="ml-2 text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without
-                            the
-                            complexity
-                            of traditional ITSM solutions.Accelerate critical development work, eliminate toil.</p>
+                        <p class="ml-2 text-gray-600 dark:text-gray-400 text-base lg:text-lg">
+                            Berikut beberapa daftar layanan yang tersedia di BLUD Rumah Sakit Umum Daerah (RSUD) Kota Baubau
+                        </p>
                         <br>
                         <h2 id="accordion-collapse-heading-1">
                             <button type="button"

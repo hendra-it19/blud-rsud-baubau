@@ -13,7 +13,14 @@ class LandingpageController extends Controller
     public function utama(): View
     {
         $judulHalaman = 'Beranda';
-        return view('landingpage.beranda', compact('judulHalaman'));
+        $data = [
+            'jumlah_pegawai' => 300,
+            'jumlah_dokter' => 20,
+            'lama_beroperasi' => 40,
+            'akumulasi_pasien' => '100K',
+            'jumlah_berita' => 40,
+        ];
+        return view('landingpage.beranda', compact('judulHalaman', 'data'));
     }
 
     public function berita(Request $request): View

@@ -42,13 +42,6 @@ Route::get('/jadwal-dokter/{poli}', [LayananController::class, 'jadwalDokterPoli
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('loginPost');
 
-Route::get('/cek-dokter', function () {
-    return SikDokter::all();
-});
-Route::get('/cek-jadwal', function () {
-    return SikJadwalDokter::all();
-});
-
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/', [AuthController::class, 'dashboard']);
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

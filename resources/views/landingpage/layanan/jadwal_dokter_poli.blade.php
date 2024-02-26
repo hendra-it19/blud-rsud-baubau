@@ -90,7 +90,7 @@
                             <tbody>
                                 @foreach ($data as $row)
                                     <tr
-                                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600  text-xs lg:text-base">
+                                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600  text-xs lg:text-sm">
                                         <th scope="row" class="px-3 py-2 text-gray-900 dark:text-white">
                                             {{ $row->dokter->nm_dokter }}
                                         </th>

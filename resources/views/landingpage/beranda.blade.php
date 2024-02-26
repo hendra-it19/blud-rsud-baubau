@@ -174,7 +174,7 @@
                     <span data-countup>41</span> <span>+</span>
                 </span>
                 <span class="text-gray-700" data-aos="fade-up" data-aos-once="true">
-                    Rumah sakit di seluruh indonesia
+                    Jumlah Pegawai RSUD
                 </span>
             </div>
         </div>
@@ -184,7 +184,7 @@
                     <span data-countup>41</span> <span>+</span>
                 </span>
                 <span class="text-gray-700" data-aos="fade-up" data-aos-once="true">
-                    Rumah sakit di seluruh indonesia
+                    Jumlah Dokter Bertugas
                 </span>
             </div>
         </div>
@@ -194,7 +194,7 @@
                     <span data-countup>41</span> <span>+</span>
                 </span>
                 <span class="text-gray-700" data-aos="fade-up" data-aos-once="true">
-                    Rumah sakit di seluruh indonesia
+                    Pengalaman Beroperasi
                 </span>
             </div>
         </div>
@@ -204,7 +204,7 @@
                     <span data-countup>41</span> <span>+</span>
                 </span>
                 <span class="text-gray-700" data-aos="fade-up" data-aos-once="true">
-                    Rumah sakit di seluruh indonesia
+                    Akumulasi Penanganan Pasien
                 </span>
             </div>
         </div>
@@ -214,7 +214,7 @@
                     <span data-countup>41</span> <span>+</span>
                 </span>
                 <span class="text-gray-700" data-aos="fade-up" data-aos-once="true">
-                    Rumah sakit di seluruh indonesia
+                    Jumlah Postingan Berita
                 </span>
             </div>
         </div>
