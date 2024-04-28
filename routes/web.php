@@ -8,6 +8,9 @@ use App\Http\Controllers\Admin\JadwalDokterController;
 use App\Http\Controllers\Admin\StrukturalController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\GambarSliderController;
+use App\Http\Controllers\Admin\GambarTemaController;
+use App\Http\Controllers\Admin\PengaduanController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\TentangKamiController;
@@ -38,6 +41,9 @@ Route::get('/struktural', [TentangKamiController::class, 'struktural']);
 Route::get('/informasi-layanan', [LayananController::class, 'informasiLayanan']);
 Route::get('/jadwal-dokter', [LayananController::class, 'jadwalDokter']);
 Route::get('/jadwal-dokter/{poli}', [LayananController::class, 'jadwalDokterPoli']);
+Route::get('/dokter', [LayananController::class, 'dokter']);
+
+Route::resource('pengaduan', PengaduanController::class)->only('store');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('loginPost');
@@ -57,4 +63,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('jadwal-dokter', JadwalDokterController::class);
 
     Route::resource('anjab', AnjabController::class);
+
+    Route::resource('gambar-slider', GambarSliderController::class)->only('index', 'store', 'destroy');
+    Route::resource('gambar-hero', GambarTemaController::class)->only('index', 'store');
+    Route::resource('pengaduan', PengaduanController::class)->only('index', 'destroy');
 });

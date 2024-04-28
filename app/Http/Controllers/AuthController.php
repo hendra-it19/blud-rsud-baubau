@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AnjabAbk;
+use App\Models\Category;
 use App\Models\PostinganBerita;
+use App\Models\SikDokter;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,8 +50,11 @@ class AuthController extends Controller
     public function dashboard(): View
     {
         $judulHalaman = 'Dashboard';
-        // $data = PostinganBerita::
-        return view('adminpage.dashboard', compact('judulHalaman'));
+        $jumlahBerita = PostinganBerita::count();
+        $jumlahKategoriBerita = Category::count();
+        $jumlahDokter = SikDokter::count();
+        $jumlahEberkas = AnjabAbk::count();
+        return view('adminpage.dashboard', compact('judulHalaman', 'jumlahBerita', 'jumlahKategoriBerita', 'jumlahDokter', 'jumlahEberkas'));
     }
 
     public function profile(): View

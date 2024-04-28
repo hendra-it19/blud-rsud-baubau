@@ -97,29 +97,58 @@
                     </div>
                 </div>
                 <div class="mt-10">
-                    <h2 class="mb-3 text-xl font-semibold tracking-wider text-gray-600 lg:mb-10 mg:text-2xl lg:text-3xl">
+                    <h2 id="pengaduan"
+                        class="mb-3 text-xl font-semibold tracking-wider text-gray-600 lg:mb-10 mg:text-2xl lg:text-3xl scroll-mt-6">
                         Form Pengaduan Pengguna</h2>
-                    <form action="" method="post" class="flex flex-col w-full max-w-lg gap-2">
+                    @session('success')
+                        <div id="alert-3"
+                            class="flex items-center p-4 mb-4 text-green-800 rounded-lg shadow bg-green-50 dark:bg-gray-800 dark:text-green-400 w-full max-w-lg"
+                            role="alert">
+                            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                            </svg>
+                            <span class="sr-only">Info</span>
+                            <div class="text-sm font-medium ms-3">
+                                {{ Session::get('success') }}
+                            </div>
+                            <button type="button"
+                                class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
+                                data-dismiss-target="#alert-3" aria-label="Close">
+                                <span class="sr-only">Close</span>
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                            </button>
+                        </div>
+                    @endsession
+                    <form action="{{ route('pengaduan.store') }}" method="post"
+                        class="flex flex-col w-full max-w-lg gap-2">
+                        @csrf
+                        @method('post')
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="text" name="nama" id="nama"
+                            <input type="text" name="nama_lengkap" id="nama"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary-600 peer"
-                                placeholder=" " required />
+                                placeholder="" required />
                             <label for="nama"
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-primary-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Nama Lengkap
                             </label>
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="tel" name="nomor_hp" id="nomor_hp"
+                            <input type="number" name="nomor_hp" id="nomor_hp"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary-600 peer"
-                                placeholder=" " required />
+                                placeholder="" required />
                             <label for="nomor_hp"
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-primary-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Nomor Handphone
                             </label>
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
-                            <textarea name="pengaduan" id="pengaduan"
+                            <textarea name="deskripsi" id="pengaduan"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary-600 peer"
                                 placeholder=" " required rows="8" /></textarea>
                             <label for="pengaduan"

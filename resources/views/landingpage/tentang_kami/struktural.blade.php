@@ -71,13 +71,14 @@
                             <div
                                 class="w-full m-auto max-w-40 shadow hover:shadow-md rounded-lg p-3 hover:border-t-4 hover:border-yellow-400 duration-300 cursor-pointer">
                                 <div class="relative">
-                                    <img src="{{ asset('asset/image/dokter-spesialis/direktur.png') }}" alt="dokter"
+                                    <img src="{{ asset($row->foto) }}" alt="Foto {{ $row->nama }} RSUD BAUBAU"
                                         class="w-full h-full object-cover bg-cover aspect-auto">
                                 </div>
                                 <div>
-                                    <h3 class="font-bold my-1 text-gray-600">Direktur</h3>
-                                    <p class="font-semibold text-gray-600 leading-5 text-sm">dr. Sadly Salman, Sp.
-                                        Og</p>
+                                    <h3 class="font-bold my-1 text-gray-600">{{ $row->jabatan }}</h3>
+                                    <p class="font-semibold text-gray-600 leading-5 text-sm">
+                                        {{ $row->nama }}
+                                    </p>
                                 </div>
                             </div>
                         @endif

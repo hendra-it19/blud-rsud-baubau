@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dokter;
 use App\Models\SikJadwal;
 use App\Models\Struktural;
 use Illuminate\Http\Request;

@@ -5,7 +5,7 @@
 
         <div class="flex justify-between gap-5 mb-7 lg:mb-12">
             <div class="flex flex-col gap-4">
-                <h5 class="text-2xl font-semibold capitalize">Daftar Dokter</h5>
+                <h5 class="text-2xl font-semibold capitalize">Daftar Gambar Slider</h5>
                 <nav class="flex" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                         <li class="inline-flex items-center">
@@ -29,22 +29,25 @@
                                         stroke-width="2" d="m1 9 4-4-4-4" />
                                 </svg>
                                 <span
-                                    class="text-sm font-medium text-gray-500 ms-1 md:ms-2 dark:text-gray-400">dokter</span>
+                                    class="text-sm font-medium text-gray-500 ms-1 md:ms-2 dark:text-gray-400">Slider</span>
                             </div>
                         </li>
                     </ol>
                 </nav>
             </div>
             <div class="flex items-end">
-                <a href="{{ route('dokter.create') }}" type="button"
-                    class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white rounded-lg w-fit h-fit bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 me-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                <!-- Modal toggle -->
+                <button data-modal-target="modal-create" data-modal-toggle="modal-create"
+                    class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white rounded-lg w-fit h-fit bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 me-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                    type="button">
                     <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M5 12h14m-7 7V5" />
                     </svg>
-                    Tambah Data
-                </a>
+                    Tambah Gambar
+                </button>
+                @include('adminpage.gambar-slider.create')
             </div>
         </div>
 
@@ -109,25 +112,13 @@
                             NO
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Nama Dokter
+                            Gambar
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Poliklinik
+                            Waktu Buat
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Nomor SIP
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Nomor Telepon
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Foto
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Tanggal Dibuat
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Tanggal Update
+                            Waktu Update
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Aksi
@@ -142,21 +133,8 @@
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $no++ }}
                             </th>
-                            <td class="px-6 py-4">
-                                {{ $row->nama_dokter }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $row->poliklinik }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $row->no_sip }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $row->no_hp }}
-                            </td>
                             <td class="px-1 py-1">
-                                <img src="{{ asset($row->foto) }}" alt="Foto Pegawai"
-                                    class="object-cover w-16 h-16 bg-cover rounded-md">
+                                <img src="{{ asset($row->foto) }}" alt="slider" class="w-56 aspect-video">
                             </td>
                             <td class="px-6 py-4">
                                 {{ $row->created_at }}
@@ -165,21 +143,11 @@
                                 {{ $row->updated_at }}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="{{ route('dokter.edit', $row->id) }}"
-                                    class="inline-block font-medium text-primary-600 hover:text-primary-700">
-                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="m10.8 17.8-6.4 2.1 2.1-6.4m4.3 4.3L19 9a3 3 0 0 0-4-4l-8.4 8.6m4.3 4.3-4.3-4.3m2.1 2.1L15 9.1m-2.1-2 4.2 4.2" />
-                                    </svg>
-                                </a>
-                                <form action="{{ route('dokter.destroy', $row->id) }}" class="inline-block"
+                                <form action="{{ route('gambar-slider.destroy', $row->id) }}" class="inline-block"
                                     method="post">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit"
-                                        onclick="return confirm('Yakin ingin menghapus data {{ $row->nama_dokter }}?')"
+                                    <button type="submit" onclick="return confirm('Yakin ingin menghapus data ?')"
                                         class="font-medium text-red-600 hover:text-red-700">
                                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                             fill="none" viewBox="0 0 24 24">
@@ -208,5 +176,15 @@
     <script src="{{ asset('asset/data-tables/jquery.dataTables.min.js') }}"></script>
     <script>
         new DataTable('#table');
+        const previewImage = (event) => {
+            const imageFiles = event.target.files;
+            const imageFilesLength = imageFiles.length;
+            if (imageFilesLength > 0) {
+                const imageSrc = URL.createObjectURL(imageFiles[0]);
+                const imagePreviewElement = document.querySelector("#preview-selected-image");
+                imagePreviewElement.src = imageSrc;
+                imagePreviewElement.style.display = "block";
+            }
+        };
     </script>
 @endpush

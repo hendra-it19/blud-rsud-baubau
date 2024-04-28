@@ -75,20 +75,6 @@
                                 </a>
                             </li>
                         </ul>
-                        {{-- <div class="py-1">
-                            <a href="{{ url('/direktur') }}"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                Direktur
-                            </a>
-                            <a href="{{ url('/kepala-bagian-tata-usaha') }}"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                Kepala Bagian Tata Usaha
-                            </a>
-                            <a href="{{ url('/kepala-bidang-pelayanan-penunjang') }}"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                Kepala Bidang Pelayanan Penunjang
-                            </a>
-                        </div> --}}
                     </div>
                 </li>
                 <li>
@@ -106,6 +92,11 @@
                             <li>
                                 <a href="{{ url('/informasi-layanan') }}" class="block px-4 py-2 hover:bg-gray-100">
                                     Informasi Layanan
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/dokter') }}" class="block px-4 py-2 hover:bg-gray-100">
+                                    Dokter
                                 </a>
                             </li>
                             <li>

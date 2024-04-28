@@ -9,22 +9,22 @@
                 <div
                     class="flex flex-col items-center justify-center gap-4 p-4 px-10 bg-white rounded shadow-md border-t-2 border-primary-700">
                     <h4 class="font-semibold">Kategori Berita</h4>
-                    <p>120</p>
+                    <p>{{ $jumlahKategoriBerita }}</p>
                 </div>
                 <div
                     class="flex flex-col items-center justify-center gap-4 p-4 px-10 bg-white rounded shadow-md border-t-2 border-primary-700">
                     <h4 class="font-semibold">Postingan Berita</h4>
-                    <p>320</p>
+                    <p>{{ $jumlahBerita }}</p>
                 </div>
                 <div
                     class="flex flex-col items-center justify-center gap-4 p-4 px-10 bg-white rounded shadow-md border-t-2 border-primary-700">
                     <h4 class="font-semibold">Data Dokter</h4>
-                    <p>10</p>
+                    <p>{{ $jumlahDokter }}</p>
                 </div>
                 <div
                     class="flex flex-col items-center justify-center gap-4 p-4 px-10 bg-white rounded shadow-md border-t-2 border-primary-700">
                     <h4 class="font-semibold">Arsip Dokumen</h4>
-                    <p>10</p>
+                    <p>{{ $jumlahEberkas }}</p>
                 </div>
             </div>
         </section>
