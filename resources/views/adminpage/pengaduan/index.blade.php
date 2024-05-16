@@ -97,22 +97,22 @@
                 style="width:100%">
                 <thead class="text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 text-[11px]">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 w-fit">
                             NO
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 w-fit">
                             Nama Lengkap
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 w-fit">
                             Nomor Handphone
                         </th>
                         <th scope="col" class="px-6 py-3">
                             laporan
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 w-fit">
                             Tanggal Dibuat
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 w-fit">
                             Aksi
                         </th>
                     </tr>
@@ -122,22 +122,22 @@
                         <tr
                             class="border-b text-[11px] odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 dark:border-gray-700">
                             <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white w-fit">
                                 {{ $no++ }}
                             </th>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 w-fit">
                                 {{ $row->nama_lengkap }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 w-fit">
                                 {{ $row->nomor_hp }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ $row->deskripsi }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 w-fit">
                                 {{ $row->created_at }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 w-fit">
                                 <form action="{{ route('pengaduan.destroy', $row->id) }}" class="inline-block"
                                     method="post">
                                     @csrf

@@ -7,6 +7,14 @@
 
     <title>{{ $judulHalaman }} | {{ config('app.name') }}</title>
 
+
+    @notifyCss
+    <style>
+        #laravel-notify {
+            position: relative;
+            z-index: 9999999 !important;
+        }
+    </style>
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('lib/aos/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
@@ -30,6 +38,8 @@
     </div>
 
 
+    <x-notify::notify />
+    @notifyJs
     <script src="{{ asset('lib/aos/aos.js') }}"></script>
     <script src="https://unpkg.com/animejs@3.1.0/lib/anime.min.js"></script>
     <script src="{{ asset('asset/js/script.js') }}"></script>

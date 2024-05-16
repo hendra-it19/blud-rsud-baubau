@@ -67,7 +67,7 @@
     <section class="bg-gradient-to-b from-gray-300 to-white">
         <div class="flex flex-wrap justify-between w-full max-w-5xl gap-4 p-5 m-auto overflow-hidden md:p-10 lg:gap-3">
 
-            <a href="{{ url('/jadwal-dokter') }}" data-aos="fade-down" data-aos-delay="0" data-aos-once="true"
+            <a href="{{ url('/dokter') }}" data-aos="fade-down" data-aos-delay="0" data-aos-once="true"
                 class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden cursor-pointer">
                 <div
                     class="p-5 bg-white rounded shadow-md lg:shadow-none lg:rounded-none lg:p-4 lg:flex lg:justify-center lg:items-center lg:gap-3 w-fit h-fit">
@@ -105,7 +105,7 @@
                 <span class="block lg:hidden">Jadwal Dokter</span>
             </a>
 
-            <a data-aos="fade-down" data-aos-delay="200" data-aos-once="true"
+            <a href="/booking" data-aos="fade-down" data-aos-delay="200" data-aos-once="true"
                 class="flex flex-col gap-2 items-center justify-center text-xs lg:text-[14px] font-semibold text-gray-600 lg:shadow-md lg:rounded-md overflow-hidden cursor-pointer">
                 <div
                     class="p-5 bg-white rounded shadow-md lg:shadow-none lg:rounded-none lg:p-4 lg:flex lg:justify-center lg:items-center lg:gap-3 w-fit h-fit">

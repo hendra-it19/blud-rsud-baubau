@@ -9,7 +9,6 @@ use Illuminate\View\View;
 
 class LandingpageController extends Controller
 {
-
     public function utama(): View
     {
         $judulHalaman = 'Beranda';

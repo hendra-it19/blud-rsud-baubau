@@ -30,11 +30,26 @@
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="m1 9 4-4-4-4" />
                                     </svg>
-                                    <a class="ms-1 text-xs lg:text-sm font-medium text-gray-200 md:ms-2">
+                                    <a href="/dokter" class="ms-1 text-xs lg:text-sm font-medium text-gray-200 md:ms-2">
                                         Dokter
                                     </a>
                                 </div>
                             </li>
+                            @if (!empty($cari))
+                                <li>
+                                    <div class="flex items-center">
+                                        <svg class="rtl:rotate-180 w-2 h-2 lg:w-4 lg:h-4 text-gray-400 mx-0.5 lg:mx-1"
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 6 10">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 9 4-4-4-4" />
+                                        </svg>
+                                        <a class="ms-1 text-xs lg:text-sm font-medium text-gray-200 md:ms-2">
+                                            Cari Dokter
+                                        </a>
+                                    </div>
+                                </li>
+                            @endif
                         </ol>
                     </nav>
                 </div>
@@ -64,28 +79,33 @@
                             </div>
                             <input type="search" id="default-search" name="nama_dokter"
                                 class="block w-full px-4 py-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
-                                placeholder="Masukkan kata kunci..." />
+                                placeholder="Masukkan kata kunci..." value="{{ $cari }}" />
                             <button type="submit"
-                                class="text-white absolute end-2 bottom-1.5 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-1.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Cari</button>
+                                class="text-white absolute end-2 bottom-1.5 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-1.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                Cari
+                            </button>
                         </div>
                     </form>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between items-center gap-5">
                     @foreach ($data as $row)
                         <div
-                            class="w-full m-auto max-w-40 shadow hover:shadow-md rounded-lg p-3 hover:border-t-4 hover:border-yellow-400 duration-300 cursor-pointer">
-                            <div class="relative w-full h-40 flex items-center justify-center">
+                            class="w-full m-auto max-w-40 shadow hover:shadow-md rounded-lg p-3 duration-300 cursor-pointer group">
+                            <div
+                                class="relative w-full h-36 flex items-center justify-center overflow-hidden rounded-xl aspect-auto">
                                 <img src="{{ asset($row->foto) }}" alt="Foto {{ $row->nama_dokter }} RSUD BAUBAU"
-                                    class="w-full h-full object-cover bg-cover aspect-auto mx-auto">
+                                    class="w-full h-full object-cover bg-cover mx-auto object-center group-hover:scale-110 duration-300">
                             </div>
                             <div>
-                                <h3 class="font-semibold text-lg mt-1 text-gray-600">{{ $row->nama_dokter }}</h3>
-                                <p class=" text-gray-600 text-sm">
+                                <h3 class="font-semibold text text-lg mt-1 text-gray-600 line-clamp-2">
+                                    {{ $row->nama_dokter }}</h3>
+                                <p class="
+                                    text-gray-600 text-sm">
                                     {{ $row->poliklinik }}
                                 </p>
                             </div>
                             <hr class="my-1.5">
-                            <div class="text-sm">
+                            <div class="text-xs">
                                 <div class="flex items-center gap-1">
                                     <svg class="w-4  h-4 text-gray-800 dark:text-white" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"

@@ -26,4 +26,9 @@ class SikPoliklinik extends Model
     {
         return $this->hasMany(SikJadwalDokter::class, 'kd_poli', 'kd_poli');
     }
+
+    public function bookingPeriksa(): HasMany
+    {
+        return $this->hasMany(SikBookingPeriksa::class, 'kd_poli', 'kd_poli');
+    }
 }

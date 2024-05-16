@@ -42,6 +42,11 @@ Route::get('/informasi-layanan', [LayananController::class, 'informasiLayanan'])
 Route::get('/jadwal-dokter', [LayananController::class, 'jadwalDokter']);
 Route::get('/jadwal-dokter/{poli}', [LayananController::class, 'jadwalDokterPoli']);
 Route::get('/dokter', [LayananController::class, 'dokter']);
+Route::get('/booking', [LayananController::class, 'booking']);
+Route::get('/booking/{no_booking}', [LayananController::class, 'Detailbooking']);
+Route::post('/booking', [LayananController::class, 'Postbooking']);
+Route::get('/booking/{no_booking}/pdf', [LayananController::class, 'PdfBooking']);
+Route::get('/reload-captcha', [LayananController::class, 'reloadCaptcha']);
 
 Route::resource('pengaduan', PengaduanController::class)->only('store');
 

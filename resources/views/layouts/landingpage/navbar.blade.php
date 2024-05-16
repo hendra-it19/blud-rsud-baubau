@@ -105,11 +105,9 @@
                                 </a>
                             </li>
                             <li class="relative">
-                                <a class="block px-4 py-2 disabled text-gray-500">
+                                <a href="{{ url('/booking') }}" class="block px-4 py-2 hover:bg-gray-100">
                                     Booking
                                 </a>
-                                <span
-                                    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded absolute top-[20%] right-0">Soon</span>
                             </li>
                         </ul>
                     </div>
@@ -122,7 +120,7 @@
                     <a href="{{ url('/kontak') }}"
                         class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-primary-800 lg:p-0">Kontak</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('login') }}"
                         class="block bg-secondary-500 text-white lg:py-0.5 lg:px-3 py-1 text-center rounded hover:bg-secondary-600 capitalize">
                         @if (!empty(auth()->user()->nama))
@@ -131,7 +129,14 @@
                             Admin
                         @endif
                     </a>
+                </li> --}}
+                <li>
+                    <a href="{{ url('/booking') }}"
+                        class="block bg-secondary-500 text-white lg:py-1 lg:px-3 py-1.5 text-center rounded hover:bg-secondary-600 capitalize">
+                        Booking
+                    </a>
                 </li>
+
             </ul>
         </div>
     </div>
