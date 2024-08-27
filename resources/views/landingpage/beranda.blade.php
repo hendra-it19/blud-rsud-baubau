@@ -221,7 +221,7 @@
     </section>
 
 
-    <section class="grid grid-cols-1 gap-4 p-5 lg:p-10 lg:grid-cols-2">
+    <section class="grid grid-cols-1 gap-4 p-5 lg:p-10 lg:grid-cols-2 w-full overflow-x-hidden">
         <div>
             <div class="w-10/12">
                 <h1 class="title" data-aos="zoom-in">Selamat Datang Di RSUD Kota Bau-bau</h1>
